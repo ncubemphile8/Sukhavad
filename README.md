@@ -2,24 +2,24 @@
 
 A dual-world brand experience for Sukhavad Couture and Sukulture Fest.
 
-## Live experience
-- Split entry portal for Sukhavad Couture and Sukulture Fest.
-- Distinct visual identities, transitions and navigation for both worlds.
-- Editorial clothing collection with interactive product details, size selection and an enquiry bag.
-- Sukulture countdown, supplied event details, vendor fees and official poster.
+## Experience
+- Distinct entry portal and animated transitions between Sukhavad Couture and Sukulture Fest.
+- Sukhavad editorial collection with interactive product details, size selection, tactile hover effects and an enquiry bag.
+- Supplied Sukhavad God Got You product image and brand lifestyle photography.
+- Sukulture event countdown, official event poster, date, venue, theme and stall fees.
 - Performer section reserved for the confirmed lineup.
-- Festival photo archive with lightbox interaction and responsive layouts.
-- Supplied Sukhavad product and live-event photography integrated into the experience.
+- Festival archive with an interactive lightbox and supplied live-stage photography.
+- Responsive desktop and mobile layouts.
 
 ## Run locally
-Open `index.html` in a browser. This is a static HTML/CSS/JavaScript experience and requires no build step.
+Open `index.html` in a browser. Static HTML/CSS/JavaScript; no build step required.
 
 ## Confirmed event details
-- Date: 29 November 2026
-- Venue: ZITF BAS Pavilion Grounds
-- Theme: Fashion in Motion — Soul in Sound
-- Stall fees: Shisha $150, Food $100, Cocktails $60, Merch $50, Accessories $50
+- 29 November 2026
+- ZITF BAS Pavilion Grounds
+- Fashion in Motion — Soul in Sound
+- Shisha $150, Food $100, Cocktails $60, Merch $50, Accessories $50
 - Stall payments at Sukhavad Store
 
 ## Content integrity
-Garment prices, live stock, performer names, set times and ticket links have not been invented. The site uses the supplied official poster, product image and live-stage image. Other lookbook/gallery images remain replaceable visual references and should be replaced with the remaining original campaign photographs and video before the final public catalogue launch. The bag prepares product enquiries only; no payment checkout is enabled.
+Garment prices, stock, performer names, set times and ticket links remain unfilled until confirmed by the brand. Some secondary lookbook/gallery imagery is still replaceable visual reference material; replace it with the remaining official photographs and video. The bag prepares product enquiries only and does not process payments.
