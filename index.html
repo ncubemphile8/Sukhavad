@@ -28,6 +28,46 @@
 .overlay{position:fixed;inset:0;background:#000b;z-index:30;display:none;align-items:center;justify-content:center;padding:18px}.overlay.show{display:flex}.modal{background:#eee9df;color:#111;max-width:850px;width:100%;display:grid;grid-template-columns:1fr 1fr;position:relative;max-height:90vh;overflow:auto}.modal-img{min-height:480px;background:#d3cabb}.modal-img img{width:100%;height:100%;object-fit:cover}.modal-copy{padding:42px 34px;display:flex;flex-direction:column;justify-content:center}.close{position:absolute;right:12px;top:12px;border:0;background:#111;color:#fff;width:36px;height:36px;border-radius:50%;font-size:20px}.modal-copy h2{font:36px 'Archivo Black';letter-spacing:-.06em;margin:12px 0}.modal-copy p{font-size:13px;color:#625e56;line-height:1.6}.sizes{display:flex;gap:8px;margin:12px 0 20px}.sizes button{width:42px;height:40px;border:1px solid #aaa;background:transparent}.sizes button.selected{background:#111;color:white}.add{background:#111;color:#fff;border:0;padding:16px;text-transform:uppercase;font:11px 'DM Mono';letter-spacing:.12em}.add:hover{background:var(--orange)}.bagpanel{position:fixed;right:0;top:0;bottom:0;width:min(420px,100%);background:#eee9df;color:#111;z-index:35;transform:translateX(105%);transition:.4s;padding:30px;display:flex;flex-direction:column}.bagpanel.show{transform:none}.baghead{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1113;padding-bottom:20px}.bagitems{flex:1;overflow:auto;padding:20px 0}.bagitem{padding:14px 0;border-bottom:1px solid #1112;font-size:13px;display:flex;justify-content:space-between}.bagfoot{border-top:1px solid #1113;padding-top:18px;font-size:12px;line-height:1.6}.bagfoot button{width:100%;margin-top:14px;background:#111;color:white;border:0;padding:15px;font:11px 'DM Mono';text-transform:uppercase}.toast{position:fixed;bottom:25px;left:50%;transform:translate(-50%,20px);background:#f3ee18;color:#111;padding:13px 20px;font:11px 'DM Mono';opacity:0;transition:.3s;z-index:50}.toast.show{opacity:1;transform:translate(-50%,0)}
 @media(max-width:800px){.nav{height:65px}.navlinks{display:none}.menu{display:block}.portal{padding:35px 5vw}.portal-bottom{grid-template-columns:1fr}.world-card{min-height:300px}.clothes-hero{grid-template-columns:1fr}.clothes-copy{padding:70px 7vw 45px}.clothes-visual{min-height:470px}.collection-grid{grid-template-columns:repeat(2,1fr);gap:10px}.product-image{height:310px}.quick{transform:none}.editorial{grid-template-columns:1fr}.editorial-photo{min-height:350px}.editorial-copy{padding:55px 7vw}.fest-hero{min-height:680px;padding:60px 5vw}.fest-info{grid-template-columns:1fr;padding:55px 7vw}.stall-grid{grid-template-columns:repeat(2,1fr)}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:220px 170px 170px}.gallery-grid div:first-child{grid-row:span 2}.gallery-grid div:nth-child(5){display:none}.section{padding:60px 6vw}.section-head{display:block}.section-head p{margin-top:16px}.modal{grid-template-columns:1fr;max-width:480px}.modal-img{min-height:300px;height:300px}.modal-copy{padding:25px}.footer{flex-direction:column;align-items:flex-start}.backhome{bottom:12px;left:12px}}
 @media(max-width:480px){.collection-grid{grid-template-columns:1fr 1fr}.product-image{height:250px}.product-meta{display:block}.product-meta span{display:block;margin-top:6px}.timebox{min-width:62px;padding:10px}.timebox b{font-size:23px}.fest-date{margin-top:26px}.fest-logo{margin-top:35px}.clothes-copy h1{font-size:68px}.world-card{min-height:260px}}
+
+/* refinement pass: cinematic transitions, tactile interactions and accessible focus */
+:root{scroll-padding-top:86px}
+html{scroll-behavior:smooth}
+a:focus-visible,button:focus-visible,[role=button]:focus-visible{outline:2px solid var(--orange);outline-offset:4px}
+.screen{will-change:opacity,transform;transform-origin:50% 20%}
+.screen.leaving{animation:depart .32s ease both}
+@keyframes depart{to{opacity:0;transform:translateY(-14px) scale(.985);filter:blur(5px)}}
+.world-card{cursor:pointer}
+.world-card:focus-visible{outline:3px solid var(--yellow);outline-offset:5px}
+.product-image{perspective:900px}
+.product-image img{will-change:transform}
+.product:hover .product-image img{transform:scale(1.055) rotate(-.6deg)}
+.quick{z-index:2}
+.fest-hero{isolation:isolate}
+.fest-hero:before{pointer-events:none}
+.fest-hero:after{pointer-events:none}
+.countdown{font-variant-numeric:tabular-nums}
+.festival-world .fest-date{position:relative;text-shadow:0 5px 0 #a82f3855}
+.festival-world .fest-date:after{content:"✳";position:absolute;left:calc(50% + 90px);top:-15px;font-size:clamp(30px,5vw,65px);color:var(--yellow);animation:spin 18s linear infinite}
+.festival-world .fest-actions a{transition:transform .25s,background .25s,color .25s}
+.festival-world .fest-actions a:hover{transform:translateY(-3px)}
+.festival-world .stall{transition:transform .25s,background .25s}
+.festival-world .stall:hover{transform:translateY(-5px);background:#fff9}
+.gallery-grid div{cursor:zoom-in;position:relative;overflow:hidden;transition:filter .3s}
+.gallery-grid div:after{content:"↗";position:absolute;right:14px;bottom:12px;font:20px 'DM Mono';opacity:0;transition:opacity .25s}
+.gallery-grid div:hover:after{opacity:1}
+.gallery-grid div:hover{filter:saturate(1.15) brightness(1.08)}
+.editorial-photo{transition:filter .5s}
+.editorial-photo:hover{filter:saturate(1.2)}
+#backhome{transition:transform .25s,background .25s}
+#backhome:hover{transform:translateY(-3px);background:var(--orange)}
+.overlay{backdrop-filter:blur(9px)}
+.modal{animation:modalIn .38s cubic-bezier(.2,.75,.2,1)}
+@keyframes modalIn{from{opacity:0;transform:translateY(18px) scale(.975)}to{opacity:1;transform:none}}
+.bagpanel{box-shadow:-20px 0 80px #0003}
+.toast{border-radius:40px;box-shadow:0 8px 30px #0003}
+@media(max-width:800px){.quick{transform:translateY(0);background:#eee9dfd9}.festival-world .fest-date:after{left:calc(50% + 58px)}}
+@media(prefers-reduced-motion:reduce){.screen,.modal{animation:none!important}.world-card:before,.product-image img,.quick,.stall{transition:none!important}}
+
 </style>
 </head>
 <body class="grain">
@@ -90,5 +130,47 @@ function copyEnquiry(){if(!bagItems.length){toast('Your bag is empty');return}le
 function toast(t){let e=document.getElementById('toast');e.textContent=t;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2200)}
 function tick(){let target=new Date('2026-11-29T00:00:00+02:00').getTime(),now=Date.now(),diff=target-now;if(diff<=0){document.getElementById('countdown').innerHTML='<div class="eyebrow">THE DAY IS HERE — LET THE CULTURE MOVE.</div>';return}let d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);[['days',d],['hours',h],['mins',m],['secs',s]].forEach(([id,v])=>document.getElementById(id).textContent=String(v).padStart(2,'0'))}
 tick();setInterval(tick,1000);
+
+/* UX refinement: cross-world transitions, gallery lightbox, keyboard escape and product motion */
+(function(){
+ const oldShow=window.showWorld;
+ window.showWorld=function(id){
+  const current=document.querySelector('.screen.active');
+  if(current && current.id!==id){
+   current.classList.add('leaving');
+   setTimeout(()=>{current.classList.remove('leaving');oldShow(id)},180);
+  } else oldShow(id);
+ };
+ const gal=document.querySelector('.gallery-grid');
+ if(gal){
+  gal.addEventListener('click',e=>{
+   const tile=e.target.closest('div');if(!tile)return;
+   const bg=getComputedStyle(tile).backgroundImage;
+   const url=(bg.match(/url\(["']?(.*?)["']?\)/)||[])[1];
+   if(!url)return;
+   let lb=document.getElementById('galleryLightbox');
+   if(!lb){lb=document.createElement('div');lb.id='galleryLightbox';lb.className='overlay show';lb.innerHTML='<button class="close" aria-label="Close gallery">×</button><img alt="Sukulture festival archive image" style="max-width:92vw;max-height:88vh;object-fit:contain">';document.body.appendChild(lb);
+    lb.addEventListener('click',ev=>{if(ev.target===lb||ev.target.classList.contains('close'))lb.classList.remove('show')});
+   }
+   lb.querySelector('img').src=url;lb.classList.add('show');
+  });
+ }
+ document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+   const overlay=document.getElementById('productOverlay');if(overlay)overlay.classList.remove('show');
+   const bag=document.getElementById('bag');if(bag)bag.classList.remove('show');
+   const light=document.getElementById('galleryLightbox');if(light)light.classList.remove('show');
+  }
+ });
+ document.querySelectorAll('.product').forEach(card=>{
+  card.addEventListener('pointermove',e=>{
+   if(matchMedia('(hover: none)').matches)return;
+   const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+   const img=card.querySelector('.product-image img');if(img)img.style.transform='scale(1.045) rotateY('+(-x*3)+'deg) rotateX('+(y*3)+'deg)';
+  });
+  card.addEventListener('pointerleave',()=>{const img=card.querySelector('.product-image img');if(img)img.style.transform=''});
+ });
+})();
+
 </script>
 </body></html>
