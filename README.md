@@ -5,11 +5,11 @@ A dual-world brand experience for Sukhavad Couture and Sukulture Fest.
 ## Live experience
 - Split entry portal for Sukhavad Couture and Sukulture Fest.
 - Distinct visual identities, transitions and navigation for both worlds.
-- Editorial clothing collection with interactive product detail, size selection and enquiry bag.
-- Sukulture event countdown, supplied venue/date/theme and stall fee schedule.
-- Artist/performer section reserved for the confirmed lineup.
-- Festival gallery with lightbox interaction and responsive layouts.
-- Official Sukulture Fest event poster supplied by the brand.
+- Editorial clothing collection with interactive product details, size selection and an enquiry bag.
+- Sukulture countdown, supplied event details, vendor fees and official poster.
+- Performer section reserved for the confirmed lineup.
+- Festival photo archive with lightbox interaction and responsive layouts.
+- Supplied Sukhavad product and live-event photography integrated into the experience.
 
 ## Run locally
 Open `index.html` in a browser. This is a static HTML/CSS/JavaScript experience and requires no build step.
@@ -22,4 +22,4 @@ Open `index.html` in a browser. This is a static HTML/CSS/JavaScript experience 
 - Stall payments at Sukhavad Store
 
 ## Content integrity
-The live sample does not invent garment prices, stock, performer names, set times or ticket links. Product imagery and some lookbook/gallery visuals remain replaceable visual references. Replace those with the original campaign photographs and videos supplied by the brand before treating the site as the final public catalogue. No payment checkout is enabled; the bag prepares product enquiries only.
+Garment prices, live stock, performer names, set times and ticket links have not been invented. The site uses the supplied official poster, product image and live-stage image. Other lookbook/gallery images remain replaceable visual references and should be replaced with the remaining original campaign photographs and video before the final public catalogue launch. The bag prepares product enquiries only; no payment checkout is enabled.
